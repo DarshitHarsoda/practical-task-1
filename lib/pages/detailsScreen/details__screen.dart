@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -104,45 +102,52 @@ class DetailsScreen extends StatelessWidget {
 //Address
                       itemData(
                           title: AppString.address,
-                          value:
-                              '${controller.contactDetail!.addresses![0].addressLine1}\n${controller.contactDetail!.addresses![0].addressLine2}'),
+                          value: controller.contactDetail!.addresses!.isEmpty
+                              ? "No data found"
+                              : '${controller.contactDetail!.addresses![0].addressLine1}\n${controller.contactDetail!.addresses![0].addressLine2}'),
                       SizedBox(
                         height: 10.h,
                       ),
-//LandMark
+// //LandMark
                       itemData(
                           title: AppString.landMark,
-                          value: controller
-                                  .contactDetail!.addresses![0].landmark ??
-                              "No data found"),
+                          value: controller.contactDetail!.addresses!.isEmpty
+                              ? "No data found"
+                              : controller.contactDetail!.addresses![0].landmark
+                                  .toString()),
                       SizedBox(
                         height: 10.h,
                       ),
-//Pincode
+// //Pincode
                       itemData(
                           title: AppString.pincode,
-                          value:
-                              controller.contactDetail!.addresses![0].pincode ??
-                                  "No data found"),
+                          value: controller.contactDetail!.addresses!.isEmpty
+                              ? "No data found"
+                              : controller.contactDetail!.addresses![0].pincode
+                                  .toString()),
                       SizedBox(
                         height: 10.h,
                       ),
-//City
+// //City
                       itemData(
                           title: AppString.city,
-                          value: controller.contactDetail!.addresses![0].city ??
-                              "No data found"),
+                          value: controller.contactDetail!.addresses!.isEmpty
+                              ? "No data found"
+                              : controller.contactDetail!.addresses![0].city
+                                  .toString()),
                       SizedBox(
                         height: 10.h,
                       ),
 
-//Country
+// //Country
 
                       itemData(
                           title: AppString.country,
-                          value: controller
-                                  .contactDetail!.addresses![0].countryName ??
-                              "No data found"),
+                          value: controller.contactDetail!.addresses!.isEmpty
+                              ? "No data found"
+                              : controller
+                                  .contactDetail!.addresses![0].countryName
+                                  .toString()),
                       SizedBox(
                         height: 10.h,
                       ),
